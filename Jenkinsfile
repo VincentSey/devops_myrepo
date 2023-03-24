@@ -19,10 +19,8 @@ pipeline {
                 }
           }
           steps {
-                 sh '''#!/bin/bash
+                  sh '''#!/bin/bash
                  targets=puppetclient1;
-                 cd /test/dir/clone;
-                 git clone https://<your token>@github.com/<your repo>/devops_myrepo.git
                  locate_script='/testdir/clone/devops_myrepo/script_to_run';
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
                  '''
@@ -42,10 +40,8 @@ pipeline {
                 }
           }
           steps {
-                 sh '''#!/bin/bash
+                   sh '''#!/bin/bash
                  targets=puppetclient2;
-                 cd /test/dir/clone;
-                 git clone https://<your token>@github.com/<your repo>/devops_myrepo.git
                  locate_script='/testdir/clone/devops_myrepo/script_to_run';
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
                  '''
