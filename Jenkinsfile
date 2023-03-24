@@ -20,8 +20,12 @@ pipeline {
           }
           steps {
                   sh '''#!/bin/bash
+                 puppet resource file /tmp/clone ensure=absent force=true;
+                 puppet resource file /tmp/clone ensure=directory;
+                 cd /tmp/clone;
+                 git clone https://<your token>@github.com/<your repo>devops_myrepo.git;
                  targets=puppetclient1;
-                 locate_script='/testdir/clone/devops_myrepo/script_to_run';
+                 locate_script='/tmp/clone/devops_myrepo/script_to_run';
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
                  '''
                  echo "Development container updated"
