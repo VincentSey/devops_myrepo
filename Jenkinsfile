@@ -46,7 +46,7 @@ pipeline {
           steps {
                    sh '''#!/bin/bash
                  targets=puppetclient2;
-                 locate_script='/testdir/clone/devops_myrepo/script_to_run';
+                 locate_script='/tmp/clone/devops_myrepo/script_to_run';
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
                  '''
                  echo "Production container updated"
