@@ -7,5 +7,5 @@ puppet resource file /testdir/clone ensure=absent force=true
 puppet resource file /testdir ensure=directory
 puppet resource file /testdir/clone ensure=directory
 cd /testdir/clone
-git clone https://<your token>@github.com/<your repo>/devops_myrepo.git
+git clone -b main https://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@github.com/devops_myrepo/devops_myrepo.git
 cp -p /testdir/clone/devops_myrepo/index.html /var/www/html
