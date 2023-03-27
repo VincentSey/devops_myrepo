@@ -7,5 +7,5 @@ puppet resource file /testdir/clone ensure=absent force=true
 puppet resource file /testdir ensure=directory
 puppet resource file /testdir/clone ensure=directory
 cd /testdir/clone
-git clone https://github.com/VincentSey/devops_myrepo.git;
+git clone https://github.com/VincentSey/devops_myrepo.git
 cp -p /testdir/clone/devops_myrepo/index.html /var/www/html
