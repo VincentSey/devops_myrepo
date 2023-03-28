@@ -19,7 +19,7 @@ pipeline {
                 }
           }
           steps {
-                  sh '''#!/bin/bash
+                 sh '''#!/bin/bash
                  puppet resource file /tmp/clone ensure=absent force=true;
                  puppet resource file /tmp/clone ensure=directory;
                  cd /tmp/clone;
@@ -44,7 +44,7 @@ pipeline {
                 }
           }
           steps {
-                   sh '''#!/bin/bash
+                 sh '''#!/bin/bash
                  targets=puppetclient2;
                  locate_script='/tmp/clone/devops_myrepo/script_to_run';
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
